@@ -10,12 +10,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/")
 public class HomeController {
 
-  //Index
+  // Index
   @GetMapping
-  public String getMethodName(@RequestParam String param, Model model) {
+  public String getMethodName(Model model) {
     model.addAttribute("nome", "Simone");
 
     return "index";
   }
+
+  // Functions
+  // private Movie[] getBestMovies(){
+
+  // }
+
+  // private Song[] getBestSongs(){
+
+  // }
 
 }
