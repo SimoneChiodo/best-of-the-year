@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Best of the year</title>
   </head>
   <body>
-    <p>Best of the year</p>
+    <h1 th:text="'Best of the year by ' + ${nome}" />
   </body>
 </html>
