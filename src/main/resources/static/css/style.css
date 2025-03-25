@@ -8,7 +8,7 @@ a {
   color: inherit;
   transition: box-shadow 0.3s ease-in-out;
 }
-a:hover {
+.best-list a:hover {
   box-shadow: 0 0 15px 2px rgb(186, 217, 255);
   transition: box-shadow 0.2s ease-in-out;
 }
@@ -28,7 +28,8 @@ a:hover {
   height: 200px;
   width: 200px;
   object-fit: cover;
-  transition: box-shadow 0.3s ease-in-out;
+  transform: rotate(0deg);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-out;
 }
 
 .profile-pic:hover {

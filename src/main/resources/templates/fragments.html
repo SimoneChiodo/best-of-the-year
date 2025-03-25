@@ -17,14 +17,26 @@
   </head>
   <body>
     <!-- Best Card HEADER -->
-    <th:block th:fragment="best-table-header">
+    <th:block th:fragment="best-table-header(page)">
       <div class="col-3 border-bottom pb-2">
         <a class="fs-4" th:href="@{/}">🏠</a>
         <span class="fs-5 fw-semibold">Best of</span>
       </div>
       <div class="col-9 border-bottom">
-        <a class="btn btn-secondary" th:href="@{/movies}"> Movies</a>
-        <a class="btn btn-secondary" th:href="@{/songs}"> Songs</a>
+        <a
+          class="btn"
+          th:classappend="${page == 'movie' ? 'btn-primary' : 'btn-secondary'}"
+          th:href="@{/movies}"
+        >
+          Movies</a
+        >
+        <a
+          class="btn"
+          th:classappend="${page == 'song' ? 'btn-primary' : 'btn-secondary'}"
+          th:href="@{/songs}"
+        >
+          Songs</a
+        >
       </div>
     </th:block>
 

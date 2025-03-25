@@ -17,13 +17,15 @@
       <!-- Table -->
       <div class="row colored-row border rounded-4 py-2 w-75">
         <!-- Table Header -->
-        <th:block th:replace="~{fragments :: best-table-header}"></th:block>
+        <th:block
+          th:replace="~{fragments :: best-table-header(movie)}"
+        ></th:block>
 
         <!-- Table Main -->
         <div class="col-12 text-center p-3">
           <h1 class="pb-2">Best Movies</h1>
 
-          <div class="row row-cols-1 gy-2">
+          <div class="best-list row row-cols-1 gy-2">
             <div
               th:each="movie : ${bestMovies}"
               class="col d-flex justify-content-center"
