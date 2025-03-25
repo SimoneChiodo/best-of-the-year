@@ -29,13 +29,15 @@
     </th:block>
 
     <!-- Best Movie/Song Card -->
-    <th:block th:fragment="best-card(id, nome)">
-      <div class="card" style="width: 18rem">
-        <div class="card-body">
-          <h5 class="card-title">[[${nome}]]</h5>
-          <p class="card-text">ID: [[${id}]]</p>
+    <th:block th:fragment="best-card(type, id, nome)">
+      <a th:href="@{/{type}/{id}(type=${type}, id=${id})}">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">[[${nome}]]</h5>
+            <p class="card-text">ID: [[${id}]]</p>
+          </div>
         </div>
-      </div>
+      </a>
     </th:block>
   </body>
 </html>
