@@ -5,17 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Best of Songs</title>
 
-    <!-- BOOTSTRAP CSS -->
-    <link
-      rel="stylesheet"
-      th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"
-    />
+    <!-- IMPORT CSS -->
+    <th:block th:replace="~{fragments :: import-css}"></th:block>
   </head>
-  <h1 th:each="song : ${bestSongs}" th:text="${song.toString()}"></h1>
+  <body>
+    <!-- <h1 th:each="song : ${bestSongs}" th:text="${song.toString()}"></h1> -->
 
-  <!-- Bootstrap Bundel with Popper -->
-  <script
-    th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"
-  ></script>
-  <body></body>
+    <div
+      class="container d-flex justify-content-center align-items-center vh-90"
+    >
+      <!-- Table -->
+      <div class="row colored-row border rounded-4 py-2 w-75">
+        <!-- Table Header -->
+        <div class="col-3 border-bottom">
+          <h5 class="lh-lg">Best of</h5>
+        </div>
+        <div class="col-9 border-bottom">
+          <button type="button" class="btn btn-secondary">Movies</button>
+          <button type="button" class="btn btn-secondary">Songs</button>
+        </div>
+
+        <!-- Table Main -->
+        <div class="col-12 text-center p-3">
+          <h1 class="pb-2">Best Songs</h1>
+
+          <div class="row row-cols-1 gy-2">
+            <div
+              th:each="movie : ${bestSongs}"
+              class="col d-flex justify-content-center"
+            >
+              <th:block
+                th:replace="~{fragments :: best-card(${movie.getId()}, ${movie.getTitolo()})}"
+              ></th:block>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundel with Popper -->
+    <script
+      th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"
+    ></script>
+  </body>
 </html>
