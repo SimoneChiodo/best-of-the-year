@@ -8,7 +8,6 @@ public class Song {
   private String titolo;
 
   public Song(){
-    id = newRandomId(99999);
     titolo = "";
   }
 
@@ -27,13 +26,21 @@ public class Song {
   }
 
   public void setTitolo(String titolo){
+    // Initialize the ID
+    if(id == 0)
+      id = newRandomId(99999);
+
     this.titolo = titolo;
   }
 
   // To String
   @Override
   public String toString() {
-      return "ID della canzone: " + id + "; Nome della canzone: " + titolo;
+    // If the ID is not initialized
+    if(id == 0)
+      return "Song not found";
+
+    return "ID della canzone: " + id + "; Nome della canzone: " + titolo;
   }
 
   // Functions

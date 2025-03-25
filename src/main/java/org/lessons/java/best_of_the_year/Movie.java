@@ -8,7 +8,6 @@ public class Movie {
   private String titolo;
 
   public Movie(){
-    id = newRandomId(99999);
     titolo = "";
   }
 
@@ -27,13 +26,21 @@ public class Movie {
   }
 
   public void setTitolo(String titolo){
+    // Initialize the ID
+    if(id == 0)
+      id = newRandomId(99999);
+
     this.titolo = titolo;
   }
 
   // To String
   @Override
   public String toString() {
-      return "ID del film: " + id + "; Nome del film: " + titolo;
+    // If the ID is not initialized
+    if(id == 0)
+      return "Movie not found";
+    
+    return "ID del film: " + id + "; Nome del film: " + titolo;
   }
 
   // Functions
