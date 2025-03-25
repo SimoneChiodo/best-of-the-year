@@ -1,0 +1,26 @@
+body {
+  background-color: darkgray;
+}
+
+.colored-row {
+  background-color: whitesmoke;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.vh-90 {
+  height: 90vh !important;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+  box-shadow: 0 0 20px 10px rgb(186, 217, 255);
+  transform: rotate(-360deg);
+  transition: box-shadow 0.2s ease-in-out, transform 0.3s ease-in;
+}

@@ -10,9 +10,52 @@
       rel="stylesheet"
       th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"
     />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
   </head>
   <body>
-    <h1 th:text="'Best of the year by ' + ${nome}" />
+    <div
+      class="container d-flex justify-content-center align-items-center vh-90"
+    >
+      <!-- Table -->
+      <div class="row colored-row border rounded-4 py-2 w-75">
+        <!-- line 1 -->
+        <div class="col-3 border-bottom">
+          <h5 class="lh-lg">Best of</h5>
+        </div>
+        <div class="col-9 border-bottom">
+          <button type="button" class="btn btn-secondary">Movies</button>
+          <button type="button" class="btn btn-secondary">Songs</button>
+        </div>
+
+        <!-- line 2 -->
+        <div class="col-12 text-center p-3">
+          <h1 th:text="'Best of the year by ' + ${nome}" class="pb-2" />
+
+          <div class="row row-cols-1 gy-2">
+            <div class="col">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCBZhBnm3vAkOsDhDhwV14zGBh4oYkU3gukQ&s"
+                alt="duck-image"
+                class="profile-pic"
+                draggable="false"
+              />
+            </div>
+            <div class="col">
+              <p class="fst-italic">
+                Ogni anno ci sono film che ci fanno sognare e canzoni che ci
+                accompagnano nei momenti più belli. Qui troverai la mia
+                selezione personale delle migliori pellicole e delle hit più
+                indimenticabili dell'anno! 🎶🎥 Scopri quali film mi hanno
+                emozionato di più e quali canzoni non ho smesso di ascoltare.
+                Sei d'accordo con la mia lista? 🤔
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Bootstrap Bundel with Popper -->
     <script
