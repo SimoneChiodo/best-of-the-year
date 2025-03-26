@@ -8,12 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-/*
- * TODO:
- * - prelevare l'id a riga 44 e 65, nei metodi "movieDetail" e "songDetail"
- * 
- */
-
 @Controller
 @RequestMapping("/")
 public class HomeController {
